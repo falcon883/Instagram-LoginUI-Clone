@@ -23,15 +23,12 @@ public class loginFragment extends Fragment {
     private Button loginBTN;
     private TextView findAcc;
     private RelativeLayout loginPageLayout;
-    static Boolean fragRunning = false;
 
     @Nullable
     @Override
     public View onCreateView(@NonNull LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
 
         View view = inflater.inflate(R.layout.activity_login, container, false);
-
-        fragRunning = true;
 
         loginBTN = view.findViewById(R.id.login_btn);
         loginBTN.setEnabled(false);
@@ -48,7 +45,6 @@ public class loginFragment extends Fragment {
                 transaction.replace(R.id.switchPage, getHelpFrag, "findAccountFragment"); // give your fragment container id in first parameter
                 transaction.commit();
                 loginPageLayout.setVisibility(View.GONE);
-                fragRunning = false;
             }
         });
 

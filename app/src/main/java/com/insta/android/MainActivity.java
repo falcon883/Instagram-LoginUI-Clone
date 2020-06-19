@@ -27,6 +27,14 @@ public class MainActivity extends AppCompatActivity {
         switchPage = findViewById(R.id.switchPage);
         switchPage.setVisibility(View.GONE);
 
+        Button createAcc = findViewById(R.id.create_acc);
+        createAcc.setOnClickListener(new View.OnClickListener() {
+            @Override
+            public void onClick(View v) {
+                loadFragment(new createAccFragment());
+            }
+        });
+
         Button loginPage = findViewById(R.id.gotoLoginPage);
         loginPage.setOnClickListener(new View.OnClickListener() {
             @Override
@@ -37,7 +45,6 @@ public class MainActivity extends AppCompatActivity {
     }
 
     private void loadFragment(Fragment fragment) {
-        switchPage.setVisibility(View.VISIBLE);
         // create a FragmentManager
         FragmentManager fm = getSupportFragmentManager();
         // create a FragmentTransaction to begin the transaction and replace the Fragment
@@ -45,6 +52,7 @@ public class MainActivity extends AppCompatActivity {
         // replace the FrameLayout with new Fragment
         fragmentTransaction.replace(R.id.switchPage, fragment, "loginFragment");
         fragmentTransaction.commit(); // save the changes
+        switchPage.setVisibility(View.VISIBLE);
         dashPanel.setVisibility(View.GONE);
     }
 
@@ -52,7 +60,7 @@ public class MainActivity extends AppCompatActivity {
     public void onBackPressed() {
         if (dashPanel.getVisibility() == View.VISIBLE) {
             super.onBackPressed();
-        } else if (!loginFragment.fragRunning) {
+        } else if (findAccountFragment.fragRunning) {
             loadFragment(new loginFragment());
         } else {
             dashPanel.setVisibility(View.VISIBLE);

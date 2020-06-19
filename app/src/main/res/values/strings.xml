@@ -2,6 +2,7 @@
     <string name="app_name">Instagram</string>
     <string name="create_new_account">Create New Account</string>
     <string name="log_in">Log In</string>
+    <string name="log_in_">Log in.</string>
     <string name="username_hint">Phone number, email address or username</string>
     <string name="username_findAcc_hint">Username, email address or phone number</string>
     <string name="password">Password</string>
@@ -16,4 +17,8 @@
     <string name="find_your_account">Find your account</string>
     <string name="find_acc_info">Enter your Instagram username or the email address or phone number linked to your account.</string>
     <string name="need_more_help">Need More Help?</string>
+    <string name="phone">Phone</string>
+    <string name="email">Email</string>
+    <string name="create_account_info">You may receive SMS updates from Instagram and can opt out at any time.</string>
+    <string name="already_have_an_account">Already have an account?\t</string>
 </resources>

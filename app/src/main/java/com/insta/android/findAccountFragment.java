@@ -20,8 +20,9 @@ import java.util.Objects;
 
 public class findAccountFragment extends Fragment {
 
-    EditText username;
-    Button next;
+    private EditText username;
+    private Button next;
+    static boolean fragRunning = false;
 
     @Nullable
     @Override
@@ -31,6 +32,8 @@ public class findAccountFragment extends Fragment {
         Toolbar toolbar = view.findViewById(R.id.findAccToolBar);
         toolbar.setTitle(getResources().getString(R.string.login_help));
         ((AppCompatActivity) Objects.requireNonNull(getActivity())).setSupportActionBar(toolbar);
+
+        fragRunning = true;
 
         username = view.findViewById(R.id.username_findAcc);
         username.addTextChangedListener(watcher);
